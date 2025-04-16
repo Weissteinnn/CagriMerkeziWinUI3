@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" ?>
+<Page
+    x:Class="Proje_Aktarim.YoneticiSayfasi"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Proje_Aktarim"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    
+        <StackPanel Padding="30" Spacing="15">
+            <TextBlock Text="Çağrı Merkezi SSS Yönetimi" FontSize="28" FontWeight="Bold"/>
+
+            <TextBlock Text="Kayıtlı Sorular" FontSize="18"/>
+            <ListView x:Name="lvSorular" Height="200" SelectionChanged="lvSorular_SelectionChanged"/>
+
+            <TextBlock Text="Soru Giriniz:"/>
+            <TextBox x:Name="txtSoru" PlaceholderText="Soru yazın"/>
+
+            <TextBlock Text="Cevap Giriniz:"/>
+            <TextBox x:Name="txtCevap" PlaceholderText="Cevap yazın" TextWrapping="Wrap" AcceptsReturn="True" Height="100"/>
+
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Yeni Soru" Click="BtnYeni_Click"/>
+                <Button Content="Kaydet" Click="BtnKaydet_Click"/>
+                <Button Content="Sil" Click="BtnSil_Click"/>
+                <Button Content="Seçimi Kaldır" Click="BtnSecimiKaldir_Click"/>
+                <Button Content="Ana Sayfaya Dön" Click="BtnAnaSayfa_Click" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+
+        </StackPanel>
+            
+        </StackPanel>
+   
+</Page>

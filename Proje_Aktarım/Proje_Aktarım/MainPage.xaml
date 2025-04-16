@@ -1,0 +1,18 @@
+<Page
+    x:Class="Proje_Aktarim.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Proje_Aktarim"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
+        <TextBlock Text="Çağrı Merkezi Uygulamasına Hoş Geldiniz" FontSize="24" TextAlignment="Center" Margin="0,0,0,20"/>
+        <Button Content="Yönetici Girişi" Click="Yonetici_Click" Width="250" Height="50" Style="{StaticResource PrimaryButtonStyle}"/>
+        <Button Content="Kullanıcı Girişi" Click="Kullanici_Click" Width="250" Height="50"/>
+        <TextBlock Text="Karanlık Mod" VerticalAlignment="Center" Margin="0,0,5,0"/>
+        <ToggleSwitch x:Name="toggleTheme" Toggled="toggleTheme_Toggled"/>
+    </StackPanel>
+</Page>

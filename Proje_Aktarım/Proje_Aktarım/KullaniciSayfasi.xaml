@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" ?>
+<Page
+    x:Class="Proje_Aktarim.KullaniciSayfasi"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Proje_Aktarim"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <StackPanel Padding="30" Spacing="15">
+        <TextBlock Text="Sorunuzu Yazınız" FontSize="24" FontWeight="Bold"/>
+        <TextBox x:Name="txtSoru" PlaceholderText="Sorunuzu girin" KeyDown="txtSoru_KeyDown"/>
+
+        <Button Content="Cevap Ara" Click="btnAra_Click"/>
+        <TextBlock Text="Benzer Sorular" FontSize="18" Margin="0,10,0,0"/>
+        <ListView x:Name="lstSonuclar" Height="120" SelectionChanged="lstSonuclar_SelectionChanged"/>
+
+        <TextBlock Text="Seçilen Sorunun Cevabı:" FontSize="18"/>
+        <TextBox x:Name="txtCevap" Height="120" TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True"/>
+    </StackPanel>
+
+</Page>
