@@ -16,12 +16,13 @@ namespace Proje_Aktarim
         {
             this.InitializeComponent();
 
+
             // Uygulama penceresi boyutlandırma ve taşıma
             IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
             WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
             AppWindow appWindow = AppWindow.GetFromWindowId(wndId);
             appWindow.Title = "Vosmer Çağrı Merkezi Uygulaması";
-
+            appWindow.SetIcon("Assets/favicon.ico");
             appWindow.Resize(new SizeInt32(1000, 900));
             appWindow.Move(new PointInt32(300, 100));
 

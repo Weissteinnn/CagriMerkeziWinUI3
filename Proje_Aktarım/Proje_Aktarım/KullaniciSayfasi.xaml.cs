@@ -77,5 +77,12 @@ namespace Proje_Aktarim
                 e.Handled = true;
             }
         }
+
+        private void BtnkAnaSayfa_Click(object sender, RoutedEventArgs e)
+        {
+
+            ((App)Application.Current).MainWindowRef?.NavigateToPage(typeof(MainPage));
+
+        }
     }
 }

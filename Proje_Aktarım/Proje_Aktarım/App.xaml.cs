@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,6 +24,7 @@ namespace Proje_Aktarim
         public App()
         {
             this.InitializeComponent();
+
         }
 
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
@@ -33,8 +34,9 @@ namespace Proje_Aktarim
             IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
             WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
             AppWindow appWindow = AppWindow.GetFromWindowId(wndId);
+            appWindow.SetIcon("Assets/favicon.ico");
 
-            appWindow.Title = "Vosmer Çaðrý Merkezi Uygulamasý";
+            appWindow.Title = "Vosmer Ã‡aÄŸrÄ± Merkezi UygulamasÄ±";
             m_window.Activate();
         }
 

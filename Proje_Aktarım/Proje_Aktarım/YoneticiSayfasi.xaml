@@ -27,7 +27,7 @@
                 <Button Content="Kaydet" Click="BtnKaydet_Click"/>
                 <Button Content="Sil" Click="BtnSil_Click"/>
                 <Button Content="Seçimi Kaldır" Click="BtnSecimiKaldir_Click"/>
-                <Button Content="Ana Sayfaya Dön" Click="BtnAnaSayfa_Click" HorizontalAlignment="Left" Margin="0,20,0,0"/>
+                <Button Content="Ana Sayfaya Dön" Click="BtnAnaSayfa_Click" />
 
         </StackPanel>
             
