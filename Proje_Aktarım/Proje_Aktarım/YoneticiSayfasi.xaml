@@ -22,9 +22,8 @@
             <TextBlock Text="Cevap Giriniz:"/>
             <TextBox x:Name="txtCevap" PlaceholderText="Cevap yazın" TextWrapping="Wrap" AcceptsReturn="True" Height="100"/>
 
-            <StackPanel Orientation="Horizontal" Spacing="10">
-                <Button Content="Yeni Soru" Click="BtnYeni_Click"/>
-                <Button Content="Kaydet" Click="BtnKaydet_Click"/>
+        <StackPanel Orientation="Horizontal" Spacing="10">
+            <Button Content="Kaydet" Click="BtnKaydet_Click"/>
                 <Button Content="Sil" Click="BtnSil_Click"/>
                 <Button Content="Seçimi Kaldır" Click="BtnSecimiKaldir_Click"/>
                 <Button Content="Ana Sayfaya Dön" Click="BtnAnaSayfa_Click" />

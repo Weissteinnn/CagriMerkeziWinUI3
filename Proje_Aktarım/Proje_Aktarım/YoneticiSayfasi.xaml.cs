@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using CagriMerkeziSSS_Yonetici;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -58,12 +59,6 @@ namespace Proje_Aktarim
             lvSorular.ItemsSource = sorular.Select(s => s.soru).ToList();
         }
 
-        private void BtnYeni_Click(object sender, RoutedEventArgs e)
-        {
-            txtSoru.Text = "";
-            txtCevap.Text = "";
-            lvSorular.SelectedIndex = -1;
-        }
 
         private void BtnKaydet_Click(object sender, RoutedEventArgs e)
         {
@@ -76,24 +71,40 @@ namespace Proje_Aktarim
                 return;
             }
 
-            if (sorular.Any(s => s.soru.Equals(soru, StringComparison.OrdinalIgnoreCase)))
-            {
-                ShowMsg("Bu soru zaten listede mevcut.");
-                return;
-            }
+            int secilenIndex = lvSorular.SelectedIndex;
 
-            sorular.Add(new SoruCevap
+            if (secilenIndex >= 0 && secilenIndex < sorular.Count)
             {
-                id = sorular.Count + 1,
-                soru = soru,
-                cevap = cevap
-            });
+                // Seçili soru varsa, güncelleme yap
+                sorular[secilenIndex].soru = soru;
+                sorular[secilenIndex].cevap = cevap;
+
+                ShowMsg("Soru başarıyla güncellendi.");
+            }
+            else
+            {
+                // Seçili soru yoksa, yeni ekle
+                if (sorular.Any(s => s.soru.Equals(soru, StringComparison.OrdinalIgnoreCase)))
+                {
+                    ShowMsg("Bu soru zaten listede mevcut.");
+                    return;
+                }
+
+                sorular.Add(new SoruCevap
+                {
+                    id = sorular.Count + 1,
+                    soru = soru,
+                    cevap = cevap
+                });
+
+                ShowMsg("Yeni soru başarıyla eklendi.");
+            }
 
             KaydetJSON();
             ListeYenile();
             txtSoru.Text = "";
             txtCevap.Text = "";
-            ShowMsg("Soru başarıyla eklendi.");
+            lvSorular.SelectedIndex = -1;
         }
 
         private void KaydetJSON()
@@ -112,7 +123,7 @@ namespace Proje_Aktarim
             }
         }
 
-        private void BtnSil_Click(object sender, RoutedEventArgs e)
+        private async void BtnSil_Click(object sender, RoutedEventArgs e)
         {
             int index = lvSorular.SelectedIndex;
             if (index >= 0)
@@ -124,7 +135,8 @@ namespace Proje_Aktarim
                     Title = "Soruyu Sil",
                     Content = $"“{secilen}” sorusunu silmek istiyor musunuz?",
                     PrimaryButtonText = "Evet",
-                    CloseButtonText = "Hayır"
+                    CloseButtonText = "Hayır",
+                    XamlRoot = this.XamlRoot
                 };
 
                 dialog.PrimaryButtonClick += (_, _) =>
@@ -165,7 +177,7 @@ namespace Proje_Aktarim
         }
 
 
-        private void ShowMsg(string mesaj)
+        private async Task ShowMsg(string mesaj)
         {
             var dialog = new ContentDialog
             {
@@ -174,7 +186,7 @@ namespace Proje_Aktarim
                 CloseButtonText = "Tamam",
                 XamlRoot = this.XamlRoot
             };
-            _ = dialog.ShowAsync();
+            await dialog.ShowAsync();
         }
     }
 }
