@@ -9,10 +9,11 @@
 
 
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
-        <TextBlock Text="Çağrı Merkezi Uygulamasına Hoş Geldiniz" FontSize="24" TextAlignment="Center" Margin="0,0,0,20"/>
+        <TextBlock Text="Çağrı Merkezi Uygulamasına Hoş Geldiniz" FontSize="24" TextAlignment="Left" Margin="0,0,0,20"/>
         <Button Content="Yönetici Girişi" Click="Yonetici_Click" Width="250" Height="50" Style="{StaticResource PrimaryButtonStyle}"/>
         <Button Content="Kullanıcı Girişi" Click="Kullanici_Click" Width="250" Height="50" Style="{StaticResource PrimaryButtonStyle}"/>
         <TextBlock Text="Karanlık Mod" VerticalAlignment="Center" Margin="0,0,5,0"/>
         <ToggleSwitch x:Name="toggleTheme" Toggled="toggleTheme_Toggled"/>
+        <Image x:Name="imgLogo" Width="600" Height="80" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,20,0,0"/>
     </StackPanel>
 </Page>
