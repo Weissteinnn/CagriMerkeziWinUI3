@@ -110,7 +110,7 @@ namespace Proje_Aktarim
         private void KaydetJSON()
         {
             File.WriteAllText(jsonDosya, JsonConvert.SerializeObject(sorular, Formatting.Indented));
-            File.WriteAllText(tarihDosya, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            File.WriteAllText(tarihDosya, "Sorular güncellendi: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine);
         }
 
         private void lvSorular_SelectionChanged(object sender, SelectionChangedEventArgs e)
