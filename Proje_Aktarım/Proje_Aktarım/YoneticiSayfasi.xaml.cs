@@ -27,7 +27,7 @@ namespace Proje_Aktarim
     public sealed partial class YoneticiSayfasi : Page
     {
 
-        private string ortakKlasor = @"D:\test_cagri_merkezi\";
+        private string ortakKlasor = @"\\10.40.98.4\cm$";
         private string jsonDosya => Path.Combine(ortakKlasor, "sorubunlar.json");
         private string tarihDosya => Path.Combine(ortakKlasor, "guncelleme_tarih.txt");
 

@@ -21,7 +21,7 @@ namespace Proje_Aktarim
 {
     public sealed partial class KullaniciSayfasi : Page // Sayfa sınıfı, sealed olduğu için kalıtılamaz
     {
-        private string ortakKlasor = @"D:\test_cagri_merkezi\"; // JSON dosyasının bulunduğu klasör yolu
+        private string ortakKlasor = @"\\10.40.98.4\cm$\"; // JSON dosyasının bulunduğu klasör yolu
         private List<SoruCevap> sorular = new(); // Tüm soru-cevapları tutacak liste
         private NLPMatcher matcher; // NLP tabanlı eşleştirme sınıfı
 

@@ -10,7 +10,7 @@
   <Identity
     Name="0f9a98f9-8b6c-4f91-9f36-cc1b9ae7924a"
     Publisher="CN=vosmer"
-    Version="1.0.0.0" />
+    Version="1.0.13.0" />
 
   <mp:PhoneIdentity PhoneProductId="0f9a98f9-8b6c-4f91-9f36-cc1b9ae7924a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

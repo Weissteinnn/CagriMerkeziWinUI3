@@ -24,7 +24,7 @@ namespace Proje_Aktarim // Projenin namespace’i
         private async void MainPage_Loaded(object sender, RoutedEventArgs e) // Sayfa yüklendiðinde çalýþacak olay
         {
             // Sayfa yüklendiðinde güncelleme kontrolü yap
-            string updatePath = @"D:\test_cagri_merkezi\update.msix"; // Güncelleme dosyasýnýn yolu
+            string updatePath = @"\\10.40.98.4\cm$\update.msix"; // Güncelleme dosyasýnýn yolu
 
             if (File.Exists(updatePath)) // Güncelleme dosyasý varsa
             {
@@ -45,7 +45,7 @@ namespace Proje_Aktarim // Projenin namespace’i
                     {
                         UseShellExecute = true // Shell üzerinden çalýþtýrma izni
                     };
-                    File.AppendAllText(@"D:\test_cagri_merkezi\guncelleme_tarih.txt", $"Güncelleme: {DateTime.Now:yyyy-MM-dd HH:mm:ss} | Versiyon: {Versiyon.Mevcut}{Environment.NewLine}"); // Güncelleme tarihini ve versiyonu dosyaya yaz
+                    File.AppendAllText(@"\\10.40.98.4\cm$\guncelleme_tarih.txt", $"Güncelleme: {DateTime.Now:yyyy-MM-dd HH:mm:ss} | Versiyon: {Versiyon.Mevcut}{Environment.NewLine}"); // Güncelleme tarihini ve versiyonu dosyaya yaz
 
                     Process.Start(psi); // Güncellemeyi baþlat
 
